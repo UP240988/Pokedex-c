@@ -4,7 +4,7 @@ import { View, Text } from 'react-native'
 export default function PokemonIndex() {
   return (
     <View>
-      <Text>index</Text>
+      <Text>Pokemonindex</Text>
     </View>
   )
 }
