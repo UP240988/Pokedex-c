@@ -37,25 +37,22 @@ export default function Index() {
     }
   };
 
-  const filterPokemon = (text: string) => {
-    setSearchText(text); // Actualizamos el input
-    
-    // Filtramos sobre la lista original (allPokemons), no sobre 'results'
-    // Además, convertimos ambos a minúsculas para que la búsqueda sea exacta
-    const arrayFiltered = allPokemons.filter((item) => 
-      item.name.toLowerCase().includes(text.toLowerCase())
+  const filterPokemon = (text: string) => { //funcion del busacdor
+    setSearchText(text); // Actualizamo wl imoput y guarda lo q escribe el usuarioz 
+    const arrayFiltered = allPokemons.filter((item) => // esta es la q filtra la lista de los pokemones
+      item.name.toLowerCase().includes(text.toLowerCase()) //para convertir en minusculas
     ); 
     
     setResults(arrayFiltered); //Actualizar pantalla con el resultado filtrado
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container}> 
       <TextInput 
         style={styles.searchInput}
         placeholder="Buscar Pokémon..."
         value={searchText}
-        onChangeText={filterPokemon} // onChangeText es más directo en React Native
+        onChangeText={filterPokemon} // onChangeText es para pasar la informacion como string
       />
       <ScrollView>
         {results.map((item) => (
